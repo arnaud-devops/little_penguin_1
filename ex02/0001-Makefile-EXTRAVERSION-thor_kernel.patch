@@ -1,0 +1,28 @@
+From 0171b26bf8fb7a1f2febfc12f4a46b35e9db119e Mon Sep 17 00:00:00 2001
+From: Arnaud Astruc <aastruc@student.42.fr>
+Date: Thu, 8 Dec 2016 03:50:09 +0100
+Subject: [PATCH] Makefile: EXTRAVERSION = thor_kernel
+
+My first patch for little-penguin-1 project (Assignment 02)
+
+Signed-off-by: Arnaud Astruc <aastruc@student.42.fr>
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 369099dc0fae..9e5dab09daac 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,7 +1,7 @@
+ VERSION = 4
+ PATCHLEVEL = 9
+ SUBLEVEL = 0
+-EXTRAVERSION = -rc8
++EXTRAVERSION = -thor_kernel
+ NAME = Psychotic Stoned Sheep
+ 
+ # *DOCUMENTATION*
+-- 
+2.11.0
+
