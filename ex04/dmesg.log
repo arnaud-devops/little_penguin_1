@@ -1,0 +1,14 @@
+[   37.198050] usb 2-2: new full-speed USB device number 3 using ohci-pci
+[   37.459844] usb 2-2: New USB device found, idVendor=05ac, idProduct=024f
+[   37.462221] usb 2-2: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[   37.462875] usb 2-2: Product: Apple Keyboard
+[   37.462944] usb 2-2: Manufacturer: Apple Inc.
+[   37.484056] input: Apple Inc. Apple Keyboard as /devices/pci0000:00/0000:00:06.0/usb2/2-2/2-2:1.0/0003:05AC:024F.0002/input/input7
+[   37.540712] apple 0003:05AC:024F.0002: input,hidraw1: USB HID v1.11 Keyboard [Apple Inc. Apple Keyboard] on usb-0000:00:06.0-2/input0
+[   37.559180] input: Apple Inc. Apple Keyboard as /devices/pci0000:00/0000:00:06.0/usb2/2-2/2-2:1.1/0003:05AC:024F.0003/input/input8
+[   37.616986] apple 0003:05AC:024F.0003: input,hidraw2: USB HID v1.11 Device [Apple Inc. Apple Keyboard] on usb-0000:00:06.0-2/input1
+[   37.635267] hello_world_kmod: loading out-of-tree module taints kernel.
+[   37.636140] hello_world_kmod: module license 'unspecified' taints kernel.
+[   37.636870] Disabling lock debugging due to kernel taint
+[   37.638291] Hello world !
+[   45.255961] usb 2-2: USB disconnect, device number 3

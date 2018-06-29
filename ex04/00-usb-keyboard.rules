@@ -1,0 +1,1 @@
+SUBSYSTEM=="input", SUBSYSTEMS=="usb", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="01", ACTION=="add", RUN+="/sbin/insmod /lib/modules/hello-world-kmod.ko"
