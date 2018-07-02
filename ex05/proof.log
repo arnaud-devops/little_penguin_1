@@ -1,0 +1,15 @@
+-bash-4.3# insmod misc-fortytwo-kmod.ko
+-bash-4.3# dmesg | tail -n 1
+[ 3501.983647] misc_register done
+-bash-4.3# cat /dev/fortytwo
+aastruc
+-bash-4.3# echo "aastruc" > /dev/fortytwo
+-bash-4.3# echo "aastruc42" > /dev/fortytwo
+-bash: echo: write error: Invalid argument
+-bash-4.3# echo "" > /dev/fortytwo
+-bash: echo: write error: Invalid argument
+-bash-4.3# echo "rabougue" > /dev/fortytwo
+-bash: echo: write error: Invalid argument
+-bash-4.3# rmmod misc-fortytwo-kmod
+-bash-4.3# dmesg | tail -n 1
+[ 3602.130672] misc_deregister done
