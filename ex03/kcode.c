@@ -13,7 +13,8 @@ int do_work(int *my_int, int retval)
 		udelay(10);
 	if (y < 10)
 		pr_info("We slept a long time!");
-	z = x * y; return z;
+	z = x * y;
+	return z;
 }
 
 int my_init(void)
