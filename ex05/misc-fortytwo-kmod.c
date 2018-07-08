@@ -21,16 +21,20 @@ static ssize_t ft_read(struct file *file, char __user *buf,
 static ssize_t ft_write(struct file *file, const char __user *buf,
 		size_t nbytes, loff_t *ppos)
 {
-	char str[nbytes];
+	char str[strlen(login)];
 	ssize_t retval;
 
-	if (strlen(login) != nbytes)
+	memset(str, 0, strlen(login));
+	if (strlen(login) != nbytes) {
 		return -EINVAL;
+	}
 	retval = simple_write_to_buffer(str, nbytes, ppos, buf, nbytes);
-	if (strcmp(login, str) == 0)
+	if (strcmp(login, str) == 0) {
 		return retval;
-	else
+	}
+	else {
 		return -EINVAL;
+	}
 }
 
 static const struct file_operations ft_fops = {
