@@ -9,35 +9,35 @@ MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Arnaud Astruc <aastruc@student.42.fr>");
 MODULE_DESCRIPTION("fortytwo misc device driver");
 
-static char login[] = "aastruc\n";
+#define LOGIN "aastruc\n"
+
+static char login[] = LOGIN;
+static int login_length = sizeof LOGIN;
 
 static ssize_t ft_read(struct file *file, char __user *buf,
 		size_t nbytes, loff_t *ppos)
 {
 	return simple_read_from_buffer(buf, nbytes, ppos, login,
-			strlen(login));
+			login_length);
 }
 
 static ssize_t ft_write(struct file *file, const char __user *buf,
 		size_t nbytes, loff_t *ppos)
 {
-	char str[strlen(login)];
+	char str[login_length];
 	ssize_t retval;
 
-	memset(str, 0, strlen(login));
-	if (strlen(login) != nbytes) {
+	memset(str, 0, login_length);
+	if (login_length - 1 != nbytes)
 		return -EINVAL;
-	}
 	retval = simple_write_to_buffer(str, nbytes, ppos, buf, nbytes);
-	if (strcmp(login, str) == 0) {
+	if (strcmp(login, str) == 0)
 		return retval;
-	}
-	else {
+	else
 		return -EINVAL;
-	}
 }
 
-static const struct file_operations ft_fops = {
+const struct file_operations ft_fops = {
 	.owner = THIS_MODULE,
 	.read = ft_read,
 	.write = ft_write,
@@ -54,7 +54,8 @@ static int __init fortytwo_init(void)
 	int error;
 
 	error = misc_register(&fortytwo);
-	if (error) {
+	if (error)
+	{
 		pr_err("can't misc_register\n");
 		return error;
 	}

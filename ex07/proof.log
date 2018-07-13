@@ -1,0 +1,32 @@
+-bash-4.3# cat /sys/kernel/debug/fortytwo/id
+aastruc
+-bash-4.3# echo "aastru" /sys/kernel/debug/fortytwo/id
+aastru /sys/kernel/debug/fortytwo/id
+-bash-4.3# echo "aastru" /sys/kernel/debug/fortytwo/id
+aastru /sys/kernel/debug/fortytwo/id
+-bash-4.3# cat /sys/kernel/debug/fortytwo/id
+aastruc
+-bash-4.3# echo "aastru" > /sys/kernel/debug/fortytwo/id
+-bash: echo: write error: Invalid argument
+-bash-4.3# echo "aastrud" > /sys/kernel/debug/fortytwo/id
+-bash: echo: write error: Invalid argument
+-bash-4.3# echo "aastruc42" > /sys/kernel/debug/fortytwo/id
+-bash: echo: write error: Invalid argument
+-bash-4.3# echo "aastruc" > /sys/kernel/debug/fortytwo/id
+-bash-4.3# cat /sys/kernel/debug/fortytwo/jiffies
+4299579854
+-bash-4.3# echo "test" > /sys/kernel/debug/fortytwo/jiffies
+-bash: echo: write error: Invalid argument
+-bash-4.3# cat /sys/kernel/debug/fortytwo/foo
+-bash-4.3# echo "toto" > /sys/kernel/debug/fortytwo/foo
+-bash-4.3# cat /sys/kernel/debug/fortytwo/foo
+toto
+-bash-4.3# echo "tata" > /sys/kernel/debug/fortytwo/foo
+-bash-4.3# cat /sys/kernel/debug/fortytwo/foo
+tata
+-bash-4.3# echo "toto" >> /sys/kernel/debug/fortytwo/foo
+-bash-4.3# cat /sys/kernel/debug/fortytwo/foo
+tata
+toto
+-bash-4.3# cat /sys/kernel/debug/fortytwo/jiffies
+4299755910
